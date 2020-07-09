@@ -16,6 +16,12 @@ class ListArea extends StatelessWidget {
         name: 'Red Tesla',
         rate: 299,
         deals: '10 Deals'),
+    Car(
+        rating: 4.3,
+        path: 'assets/images/car3.png',
+        name: 'Red Tesla',
+        rate: 299,
+        deals: '10 Deals'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class ListArea extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 20),
+          // SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -42,13 +48,21 @@ class ListArea extends StatelessWidget {
               ),
             ],
           ),
-          ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              CarListItem(_carList[0]),
-              SizedBox(height: 20),
-              // CarListItem(_carList[1]),
-            ],
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: <Widget>[
+                    SizedBox(height:10),
+                    CarListItem(_carList[index]),
+                    SizedBox(height:10),
+                  ],
+                );
+              },
+              itemCount: _carList.length,
+              scrollDirection: Axis.vertical,
+            ),
           )
         ],
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rentalCar_ui/models/car_model.dart';
+import 'package:rentalCar_ui/screens/RentalCar_checkout.dart';
 
 class CarListItem extends StatelessWidget {
-
   final Car _carItem;
   CarListItem(this._carItem);
   @override
@@ -50,7 +50,7 @@ class CarListItem extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      _carItem.deals+' Deals',
+                      _carItem.deals + ' Deals',
                       style: TextStyle(
                         color: Colors.green,
                         fontSize: 12,
@@ -84,7 +84,7 @@ class CarListItem extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        'From \₹'+ _carItem.rate.toString()+'/ day',
+                        'From \₹' + _carItem.rate.toString() + '/ day',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.black45,
@@ -102,17 +102,25 @@ class CarListItem extends StatelessWidget {
         Positioned(
           right: 0,
           bottom: 0,
-          child: Container(
-            height: 60,
-            width: 60,
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Color.fromRGBO(34, 85, 190, 1),
-            ),
-            child: Icon(
-              Icons.fast_forward,
-              color: Colors.white,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RentalCheckout()),
+              );
+            },
+            child: Container(
+              height: 60,
+              width: 60,
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color.fromRGBO(34, 85, 190, 1),
+              ),
+              child: Icon(
+                Icons.fast_forward,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

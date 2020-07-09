@@ -24,9 +24,7 @@ class RentalCarDashboard extends StatelessWidget {
               ),
               child: SearchArea(),
             ),
-            Container(
-              // height: 300,
-              // padding: EdgeInsets.all(8.0),
+            Expanded(
               child: ListArea(),
             ),
           ],
