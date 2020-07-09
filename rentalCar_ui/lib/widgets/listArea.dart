@@ -19,7 +19,7 @@ class ListArea extends StatelessWidget {
     Car(
         rating: 4.3,
         path: 'assets/images/car3.png',
-        name: 'Red Tesla',
+        name: 'Orange Audi',
         rate: 299,
         deals: '10 Deals'),
   ];

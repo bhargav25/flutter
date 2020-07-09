@@ -6,11 +6,13 @@ class Car{
   final String deals;
   final String name;
   final int rate;
+  final int door;
   Car({
     @required this.rating,
     @required this.path,
     @required this.deals,
     @required this.name,
     @required this.rate,
+    this.door,
   });
 }
