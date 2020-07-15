@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sidebar_ui/models/transaction.dart';
+import 'package:intl/intl.dart';
+
 
 class TransactionItem extends StatelessWidget {
+  final Transaction trx;
+  TransactionItem(this.trx);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,21 +23,21 @@ class TransactionItem extends StatelessWidget {
       ),
       child: ListTile(
         title: Text(
-          'Macbook Pro',
+          trx.title,
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
         subtitle: Text(
-          'Apple',
+          DateFormat.yMMMd().format(trx.date),
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.normal,
           ),
         ),
         trailing: Text(
-          '-2499\$',
+          trx.amount.toString(),
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
