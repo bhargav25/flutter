@@ -25,9 +25,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 150),
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: 4.0),
       height: 8.0,
-      width: isActive ? 24.0 : 16.0,
+      width: isActive ? 16.0 : 8.0,
       decoration: BoxDecoration(
         color: isActive ? Colors.white : Colors.grey,
         borderRadius: BorderRadius.all(
